@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    
+    <title>Ascendentes y Descendentes</title>
+    <script>
+         n1 = parseInt(prompt("Ingresa el numero del arreglo: "));
+        arreglo = new Array(n1);
+        
+       
+        for(var i=0;i<n1;i++){
+            respuesta =parseInt(prompt("Dame el número: " +i));            
+            
+            arreglo[i] = respuesta;
+            function Burbuja() {
+            var k, aux;
+            for (k = 1; k <n1; k++) {
+                for (var i = 0; i < (n1 - k); i++) {
+                    if (arreglo[i] > arreglo[i + 1]) {
+                        aux = arreglo[i];
+                        arreglo[i] = arreglo[i + 1];
+                        arreglo[i + 1] = aux;
+                    }
+                }
+             }
+            alert("Ascendentes: " +arreglo);
+            
+            }  
+            
+
+            function BurbujaDescendente(){
+            var k, aux;
+            for (k = 1; k <n1; k++) {
+                for (var i = 0; i < (n1 - k); i++) {
+                    if (arreglo[i] < arreglo[i + 1]) {
+                        aux = arreglo[i];
+                        arreglo[i] = arreglo[i + 1];
+                        arreglo[i + 1] = aux;
+                    }
+                }
+             }
+            alert("Descendentes: " +arreglo);
+            }
+       
+        }
+        document.write("<p>Los números son: " +arreglo+ "<br/>");
+                 
+    </script>
+    <input type="submit" value="Ascendente" onclick="Burbuja()">
+    <input type="submit" value="Descendente" onclick="BurbujaDescendente()">
+</head>
+<body></body>
+</html>
